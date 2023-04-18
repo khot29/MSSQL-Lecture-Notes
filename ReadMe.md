@@ -329,3 +329,49 @@ select Distinct Country from Customers
 -----------------------------------------------------------------------------------------------
 ```
 
+
+```
+--------------------------------------------- Day 8 -------------------------------------------
+create Table Default_testing(
+	id int,
+	age int,
+	--first way
+	address varchar(500) Default 'No address input',
+	--2nd way
+	constraint DF_address Default 'Value Updated' for address
+)
+
+exec sp_help Default_testing
+
+alter table Default_testing
+drop constraint DF__Default_t__addre__3D5E1FD2
+
+--3rd way
+alter table Default_testing
+add constraint DF_address Default 'Value Updated' for address
+
+select * from Default_testing
+
+insert into Default_testing (id, age) values (1,10)
+
+******************** Identity
+
+select * from Identity_testing
+
+insert into Identity_testing  values (20,'userName3')
+
+alter table Identity_testing
+add ID_updated int
+
+update Identity_testing
+
+alter table Identity_testing
+drop column id
+set ID_updated = id
+
+exec sp_rename 'Identity_testing.ID_updated', 'id'
+
+
+
+
+```
