@@ -373,5 +373,12 @@ exec sp_rename 'Identity_testing.ID_updated', 'id'
 
 
 
+insert into Identity_testing  values (20,'userName3')
+
+select * from Identity_testing
+
+delete From Identity_testing
+where id is null
+
 
 ```
