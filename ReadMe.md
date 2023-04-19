@@ -382,3 +382,35 @@ where id is null
 
 
 ```
+
+```
+--------------------------------------------- Day 9 -------------------------------------------
+select count(*)as count from Products
+
+select * from Products 
+where UnitPrice  Between 1 and 10
+
+--and | or 
+
+--
+
+select *  from Products
+--where UnitPrice in (select Min(UnitPrice) from Products)
+
+Update Products
+set UnitPrice = 2.50
+where ProductID = 1
+
+--Between
+--Min
+--Max
+--Count
+--Avg
+--Sum
+
+
+
+select Min(UnitPrice) from Products
+
+
+```
